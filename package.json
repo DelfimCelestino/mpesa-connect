@@ -1,0 +1,23 @@
+{
+  "name": "mpesa-connect",
+  "version": "1.0.2",
+  "main": "src/mpesa.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node test.js"
+  },
+  "keywords": [
+    "mpesa",
+    "payment",
+    "sdk"
+  ],
+  "author": "Delfim Celestino Amisse Pastola",
+  "license": "MIT",
+  "description": "SDK para M-Pesa API",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5"
+  }
+}
