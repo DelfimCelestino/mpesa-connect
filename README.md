@@ -49,9 +49,7 @@ Aqui está um exemplo básico de como usar a biblioteca:
 
 ```javascript
 import { initializeMpesa } from "mpesa-connect";
-import dotenv from "dotenv";
 
-dotenv.config(); // Carrega variáveis de ambiente do arquivo .env
 
 const mpesa = initializeMpesa({
   publicKey: process.env.MPESA_PUBLIC_KEY,
