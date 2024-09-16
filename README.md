@@ -122,6 +122,5 @@ Se você deseja contribuir para o projeto, siga as seguintes etapas:
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
-```
 
-Este README fornece uma visão geral completa da biblioteca Mpesa SDK (mpesa-connect), incluindo instruções de instalação, configuração, uso básico, métodos disponíveis, diretrizes de contribuição e informações sobre a licença. Você pode salvar este conteúdo como `README.md` no diretório raiz do seu projeto.
+
