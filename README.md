@@ -60,7 +60,7 @@ const mpesa = initializeMpesa({
 
 const run = async () => {
   try {
-    const result = await mpesa.c2b("TX123456", "258857250244", 10, "REF123");
+    const result = await mpesa.c2b("TX123456", "258840000000", 10, "REF123");
     console.log("C2B Result:", result);
   } catch (error) {
     console.error("Error:", error.message);

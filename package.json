@@ -1,6 +1,6 @@
 {
   "name": "mpesa-connect",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "main": "src/mpesa.js",
   "type": "module",
   "scripts": {
@@ -10,7 +10,14 @@
   "keywords": [
     "mpesa",
     "payment",
-    "sdk"
+    "sdk",
+    "m-pesa",
+    "api",
+    "c2b",
+    "b2c",
+    "connect",
+    "Deny",
+    "Delfim"
   ],
   "author": "Delfim Celestino Amisse Pastola",
   "license": "MIT",
