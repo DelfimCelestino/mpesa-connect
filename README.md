@@ -50,7 +50,6 @@ Aqui está um exemplo básico de como usar a biblioteca:
 ```javascript
 import { initializeMpesa } from "mpesa-connect";
 
-
 const mpesa = initializeMpesa({
   publicKey: process.env.MPESA_PUBLIC_KEY,
   apiKey: process.env.MPESA_API_KEY,
@@ -111,6 +110,72 @@ Consulta o status de uma transação.
 - `queryReference`: Referência da consulta.
 - `serviceProviderCode`: Código do provedor de serviço.
 
+## Criação de Tipagens Manuais
+
+Se você estiver usando TypeScript e não conseguir encontrar as definições de tipo para o pacote `mpesa-connect`, você pode criar suas próprias definições de tipo manualmente. Para fazer isso, siga os passos abaixo:
+
+1. Crie um arquivo chamado `mpesa-connect.d.ts` na pasta `src` ou em uma pasta dedicada a tipos.
+
+2. Adicione o seguinte conteúdo ao arquivo `mpesa-connect.d.ts`:
+
+```typescript
+// src/mpesa-connect.d.ts
+declare module "mpesa-connect" {
+  export interface MpesaOptions {
+    publicKey?: string;
+    apiKey?: string;
+    serviceProviderCode?: string;
+    env: "live" | "sandbox";
+  }
+
+  export interface MakeRequestResponse {
+    response: any;
+    status: number;
+  }
+
+  export interface Mpesa {
+    c2b(
+      transactionReference: string,
+      customerMSISDN: string,
+      amount: number,
+      thirdPartyReference: string,
+      serviceProviderCodeParam?: string
+    ): Promise<MakeRequestResponse>;
+
+    b2c(
+      transactionReference: string,
+      customerMSISDN: string,
+      amount: number,
+      thirdPartyReference: string,
+      serviceProviderCodeParam?: string
+    ): Promise<MakeRequestResponse>;
+
+    transactionReversal(
+      transactionID: string,
+      securityCredential: string,
+      initiatorIdentifier: string,
+      thirdPartyReference: string,
+      reversalAmount: number,
+      serviceProviderCodeParam?: string
+    ): Promise<MakeRequestResponse>;
+
+    status(
+      thirdPartyReference: string,
+      queryReference: string,
+      serviceProviderCodeParam?: string
+    ): Promise<MakeRequestResponse>;
+
+    getToken(): string;
+  }
+
+  export function initializeMpesa(options: MpesaOptions): Mpesa;
+}
+```
+
+3. Certifique-se de que o TypeScript reconheça o arquivo de definições de tipo. Você pode precisar atualizar seu `tsconfig.json` para incluir o diretório onde o arquivo está localizado.
+
+Agora você pode usar o pacote `mpesa-connect` em seu projeto TypeScript sem problemas de tipagem.
+
 ## Contribuições
 
 Se você deseja contribuir para o projeto, siga as seguintes etapas:
@@ -122,5 +187,3 @@ Se você deseja contribuir para o projeto, siga as seguintes etapas:
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-

@@ -1,11 +1,13 @@
 {
   "name": "mpesa-connect",
-  "version": "1.0.7",
-  "main": "src/mpesa.js",
+  "version": "1.1.1",
+  "main": "dist/mpesa.js",
+  "types": "@types/mpesa-connect/index.d.ts",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node test.js"
+    "start": "node test.js",
+    "build": "tsc"
   },
   "keywords": [
     "mpesa",
@@ -19,6 +21,10 @@
     "Deny",
     "Delfim"
   ],
+  "files": [
+    "dist",
+    "src/mpesa.d.ts"
+  ],
   "author": "Delfim Celestino Amisse Pastola",
   "license": "MIT",
   "description": "SDK para M-Pesa API",
@@ -26,5 +32,9 @@
     "axios": "^1.7.7",
     "crypto": "^1.0.1",
     "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3"
   }
 }
