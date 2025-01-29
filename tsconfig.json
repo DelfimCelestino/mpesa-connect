@@ -7,9 +7,7 @@
           "strict": true,
           "esModuleInterop": true,
           "allowJs": true,
-          "types": [
-               "node"
-          ]
+          "moduleResolution": "node"
      },
      "include": [
           "src/**/*",

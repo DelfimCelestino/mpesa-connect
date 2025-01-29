@@ -1,7 +1,8 @@
 {
   "name": "mpesa-connect",
-  "version": "1.1.1",
-  "main": "dist/mpesa.js",
+  "version": "1.1.4",
+  "main": "./dist/mpesa.js",
+  "module": "./dist/mpesa.js",
   "types": "@types/mpesa-connect/index.d.ts",
   "type": "module",
   "scripts": {
@@ -21,9 +22,16 @@
     "Deny",
     "Delfim"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/mpesa.js",
+      "types": "./src/mpesa.d.ts"
+    }
+  },
   "files": [
     "dist",
-    "src/mpesa.d.ts"
+    "src/mpesa.d.ts",
+    "index.js"
   ],
   "author": "Delfim Celestino Amisse Pastola",
   "license": "MIT",

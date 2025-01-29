@@ -163,3 +163,8 @@ export function initializeMpesa({
     getToken,
   };
 }
+
+if (typeof exports !== "undefined") {
+  Object.defineProperty(exports, "__esModule", { value: true });
+  exports.initializeMpesa = initializeMpesa;
+}
